@@ -25,7 +25,6 @@ function login() {
         alert("Contraseña incorrecta");
 }
 
-
 function registroJugador(nombre, contraseña) {
     var resultado = ingresarJugadores(nombre, contraseña)
     if (resultado == -1) {
@@ -36,7 +35,7 @@ function registroJugador(nombre, contraseña) {
 }
 
 
-function register() {
+function registroJugador() {
     var resultado = registroJugador(getJugador(), getPassword());
     if (resultado == true) {
         alert("te registraste");
