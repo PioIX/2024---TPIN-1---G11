@@ -1,0 +1,1 @@
+SELECT * FROM `2024-5BINF-G02`.Preguntas;

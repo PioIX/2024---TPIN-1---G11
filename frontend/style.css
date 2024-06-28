@@ -1,0 +1,140 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #a4dbff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+#login {
+    width: 100%;
+    max-width: 400px;
+}
+
+#login .shadow {
+    background-color: #fff;
+    border: 2px solid #a87df0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#login h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#login .form-group label {
+    font-weight: bold;
+}
+
+#login .form-group input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#login .form-group button {
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#login .btn-success {
+    background-color: #a87df0;
+    border-color: #a87df0;
+}
+
+#login .btn-success:hover {
+    background-color: #8f64c8;
+    border-color: #8f64c8;
+}
+
+#login .btn-danger {
+    background-color: #ff6347;
+    border-color: #ff6347;
+}
+
+#login .btn-danger:hover {
+    background-color: #e55342;
+    border-color: #e55342;
+}
+
+#notepad {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#notepad .shadow {
+    background-color: #fff;
+    border: 2px solid #a87df0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#notepad h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#notepad .form-group label {
+    font-weight: bold;
+}
+
+#notepad .form-group textarea,
+#notepad .form-group input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#notepad .form-group button {
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#notepad .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+#notepad .btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+#allpreguntas {
+    margin-top: 20px;
+}
+
+.background::before, .background::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('shape1.png') no-repeat center center;
+    background-size: contain;
+}
+
+.background::before {
+    top: 20px;
+    left: 20px;
+}
+
+.background::after {
+    bottom: 20px;
+    right: 20px;
+}
