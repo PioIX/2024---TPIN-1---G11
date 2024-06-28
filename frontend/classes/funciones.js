@@ -48,7 +48,7 @@ function registroJugador() {
 
 function agregarPregunta(contenido) {
     if (contenido != "") {
-        notas.push(new Pregunta (contenido))
+        preguntas.push(new Pregunta (contenido))
         return preguntasId - 1;
     } else {
         return -1
@@ -58,7 +58,7 @@ function agregarPregunta(contenido) {
 function agregarPreguntaBoton() {
     let idNotaNueva = agregarPregunta(getNoteContent())
     if (idNotaNueva > 0) {
-        drawNewNote(getContent(), idPreguntaNueva)
+        drawNewPregunta(getPreguntaContent(), idPreguntaNueva)
         alert("Se ha creado tu pregunta")
     }
     else if (idPreguntaNueva = -1) {
