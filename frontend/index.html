@@ -12,10 +12,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <title>Presupuesto1erProyecto</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="styles/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body class="container">
-        <h1>REGISTRO</h1>
+        <h1 id="titulo">REGISTRO</h1>
         <div id="login">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="form-group">
@@ -36,30 +36,21 @@
         </div>
         <div id="notepad" style="display: none">
             <div>
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                    <h3>Ingresa tu pregunta</h3>
-                    <div class="form-group">
-                        <label for="content">Contenido</label>
-                        <textarea class="form-control" id="content"></textarea>
+                <h1>BIENVENIDOS</h1>
+                <div class="form-group">
+                        <button class="form-check-control btn btn-info" onclick="agregarPreguntaBoton()">Cómo jugar?</button>
+                </div>
+                <div class="form-group">
+                    <button class="form-check-control btn btn-info" onclick="agregarPreguntaBoton()">Registrate</button>
+                </div>
+                <div class="form-group">
+                        <button class="form-check-control btn btn-info" onclick="agregarPreguntaBoton()">Ver puntaje</button>
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block form-check-control" onclick="agregarPreguntaBoton()">Agregar pregunta</button>
-                        <br>
+                <div class="form-group">
+                        <button class="form-check-control btn btn-info" onclick="agregarPreguntaBoton()">Crear tus frases</button>
                     </div>
                 </div>
-                <div class="col-auto shadow p-3 mb-5 bg-white rounded">
-                    <h3>Ver Puntaje</h3>
-                    <div class="form-group">
-                        <label for="searchByID">Ingresa tu usuario para ver el puntaje</label>
-                        <input class="form-control" type="number" id="searchByID" min="0" value="0">
-                    </div>
-                    <div class="form-group">
-                        <button class="form-check-control btn btn-info" onclick="   ">Ver puntaje por Usuario</button>
-                
-                    </div>
-                </div>
-            </div>
-            <div class="shadow p-3 mb-5 bg-white rounded">
+          <div class="shadow p-3 mb-5 bg-white rounded">
                 <h3>Editor de Preguntas</h3>
                 <button onclick="mostrarPreguntas()">Mostrar todas las preguntas</button>
                 <table id="nuevoEmpleado">
@@ -102,6 +93,7 @@
     <input id="ingresarModificacionla_pregunta" placeholder="pregunta nueva ">
                 <div id="allpreguntas">
                 </div>
+            </div>
             </div>
         </div>
         <script src="classes/funciones.js"></script>
