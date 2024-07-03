@@ -1,6 +1,6 @@
 var express = require('express'); 
 var bodyParser = require('body-parser'); 
-const {realizarQuery} = require ('./mysql')
+const {realizarQuery} = require ('./modulos/mysql.js')
 var cors = require("cors");
 
 var app = express(); 
@@ -14,3 +14,16 @@ app.get('/', function(req, res){
         message: 'GET Home route working fine!'
     });
 });
+
+app.get('/obtenerPreguntas', async function(req,res){
+    console.log(req.query) 
+    const result = await realizarQuery ("SELECT * FROM Preguntas")
+    res.send(result)
+})
+
+app.listen(port, function(){
+    console.log(`Server running in http://localhost:${port}`);
+    console.log('Defined routes:');
+    console.log('   [GET] http://localhost:3000/');
+});
+
