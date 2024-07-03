@@ -7,13 +7,16 @@ function getPassword() {
 function changeScreen() {
     const notepad = document.getElementById("notepad");
     const login = document.getElementById("login");
+    const titulo = document.getElementById("titulo");
     if(notepad.style.display !== "none") {
         notepad.style.display = "none";
         login.style.display = "";
+        titulo.style.display = "";
     }
     else {
         notepad.style.display = "";
         login.style.display = "none";
+        titulo.style.display = "none";
     }
 }
 function getPreguntaContent() {
