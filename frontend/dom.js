@@ -23,14 +23,6 @@ function getPreguntaContent() {
     return document.getElementById("content").value;
 }
 
-function drawNewPregunta(content, id) {
-    document.getElementById("allPreguntas").innerHTML += `        
-        <div class="border" id="preguntaID${id}">
-            <h5>Pregunta Nº: ${id}</h5>
-            <p id="noteContent${id}">${content}</p>
-        </div>
-        <br>`;
-}
 
 async function mostrarPreguntas() {
     const response = await fetch('http://localhost:3000/obtenerPreguntas',{

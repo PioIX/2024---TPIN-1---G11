@@ -4,16 +4,15 @@
     "description": "1er_proyecto",
     "main": "index.js",
     "scripts": {
-      "test": "nodemon index.js"
+        "test": "nodemon index.js"
     },
     "author": "arakaki, maldonado, gonzalez",
     "license": "ISC",
     "dependencies": {
-      "body-parser": "^1.20.2",
-      "cors": "^2.8.5",
-      "express": "^4.19.2",
-      "mysql2": "^3.9.7",
-      "nodemon": "^3.1.0"
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "mysql2": "^3.10.2",
+        "nodemon": "^3.1.0"
     }
-  }
-  
+}
