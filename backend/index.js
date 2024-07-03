@@ -20,6 +20,23 @@ app.get('/obtenerPreguntas', async function(req,res){
     const result = await realizarQuery ("SELECT * FROM Preguntas")
     res.send(result)
 })
+app.post('/insertarPreguntas', async function(req,res) {
+    console.log(req.body)
+    const preguntaExiste =  await realizarQuery(`select * from Preguntas where la_pregunta = '${req.body.la_pregunta}'`) 
+    if (preguntaExiste.length > 0) {
+        
+        res.send({res: "La pregunta ya existe"});
+        
+    } else {
+        await realizarQuery(`INSERT INTO Preguntas (la_pregunta) 
+    VALUES ('${req.body.la_pregunta}')`);
+    let pregunta = await realizarQuery(`select id_preguntas from Preguntas WHERE la_pregunta = '${req.body.la_pregunta}'`) //Obrtengo id
+    await realizarQuery(`INSERT INTO Respuestas (id_preguntas; opcion_correcta, opcio1, opcion2, opcion3) 
+        VALUES ('${req.body.la_pregunta}')`);  
+
+    res.send({res: "ok"})
+    }
+    })
 
 app.listen(port, function(){
     console.log(`Server running in http://localhost:${port}`);

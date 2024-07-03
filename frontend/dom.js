@@ -57,7 +57,11 @@ async function agregarPregunta() {
     const data = {
         id_preguntas : document.getElementById("ingresarid_preguntas").value,
         la_pregunta : document.getElementById("ingresarla_pregunta").value,
-        id_respuestas : document.getElementById("ingresarId_respuestas").value,
+        opcion_correcta: document.getElementById("ingresaropcion_correcta").value,
+        opcion1 : document.getElementById("ingresaropcion1").value,
+        opcion2 : document.getElementById("ingresaropcion2").value,
+        opcion3 : document.getElementById("ingresaropcion3").value,
+        
     }
 
 
@@ -69,6 +73,19 @@ async function agregarPregunta() {
         body:JSON.stringify(data),
     })
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     console.log(response)
     const result = await response.json()
