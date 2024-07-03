@@ -43,14 +43,14 @@
                         <textarea class="form-control" id="content"></textarea>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block form-check-control" onclick="   ">Agregar pregunta</button>
+                        <button class="btn btn-primary btn-lg btn-block form-check-control" onclick="agregarPreguntaBoton()">Agregar pregunta</button>
                         <br>
                     </div>
                 </div>
                 <div class="col-auto shadow p-3 mb-5 bg-white rounded">
-                    <h3>Búsquedas y modificaciones</h3>
+                    <h3>Ver Puntaje</h3>
                     <div class="form-group">
-                        <label for="searchByID">Ver puntaje por Usuario</label>
+                        <label for="searchByID">Ingresa tu usuario para ver el puntaje</label>
                         <input class="form-control" type="number" id="searchByID" min="0" value="0">
                     </div>
                     <div class="form-group">
@@ -61,7 +61,7 @@
             </div>
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <h3>Preguntas</h3>
-                <div id="allPreguntas">
+                <div id="allpreguntas">
                 </div>
             </div>
         </div>
@@ -70,6 +70,7 @@
         <script src="classes/Preguntas.js"></script>
         <script src="classes/Puntaje.js"></script>
         <script src="classes/Respuestas.js"></script>
+        <script src="dom.js"></script>
 
     </body>
 </html>

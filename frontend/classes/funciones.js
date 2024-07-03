@@ -25,6 +25,7 @@ function login() {
         alert("Contraseña incorrecta");
 }
 
+
 function registroJugador(nombre, contraseña) {
     var resultado = ingresarJugadores(nombre, contraseña)
     if (resultado == -1) {
@@ -35,7 +36,7 @@ function registroJugador(nombre, contraseña) {
 }
 
 
-function registroJugador() {
+function register() {
     var resultado = registroJugador(getJugador(), getPassword());
     if (resultado == true) {
         alert("te registraste");
@@ -46,25 +47,9 @@ function registroJugador() {
     }
 }
 
-function agregarPregunta(contenido) {
-    if (contenido != "") {
-        preguntas.push(new Pregunta (contenido))
-        return preguntasId - 1;
-    } else {
-        return -1
-    }
-}
 
-function agregarPreguntaBoton() {
-    let idNotaNueva = agregarPregunta(getNoteContent())
-    if (idNotaNueva > 0) {
-        drawNewPregunta(getPreguntaContent(), idPreguntaNueva)
-        alert("Se ha creado tu pregunta")
-    }
-    else if (idPreguntaNueva = -1) {
-        alert("")
-    }
-}
+
+
 
 function respuestaCorrecta(preguntasId, respuestasId) {
     for (let i = 0; i < respuestas.length; i++) {
