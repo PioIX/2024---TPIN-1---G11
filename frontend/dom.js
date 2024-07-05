@@ -17,7 +17,13 @@ function changeScreen() {
         notepad.style.display = "";
         login.style.display = "none";
         titulo.style.display = "none";
+        
     }
+const colors = ["white"]; // Colores de fondo alternativos
+const currentColor = document.body.style.backgroundColor;
+const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
+
+document.body.style.backgroundColor = nextColor
 }
 function getPreguntaContent() {
     return document.getElementById("content").value;
