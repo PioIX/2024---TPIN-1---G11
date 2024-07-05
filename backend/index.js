@@ -20,6 +20,7 @@ app.get('/obtenerPreguntas', async function(req,res){
     const result = await realizarQuery ("SELECT * FROM Preguntas")
     res.send(result)
 })
+
 app.post('/insertarPreguntas', async function(req,res) {
     console.log(req.body)
     const preguntaExiste =  await realizarQuery(`select * from Preguntas where la_pregunta = '${req.body.la_pregunta}'`) 
