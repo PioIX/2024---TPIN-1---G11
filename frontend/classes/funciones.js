@@ -14,6 +14,9 @@ function ingresarJugadores(nombre, contraseña) {
     return -1
 }
 
+
+
+
 function login() {
     var resultado = ingresarJugadores(getJugador(),getPassword())
     if (resultado >= 1) {
@@ -21,8 +24,9 @@ function login() {
         changeScreen();
     } else if (resultado == 0)
         alert("El usuario no existe");
-    else
-        alert("Contraseña incorrecta");
+    else (resultado === "iconic")
+        alert("eres administrador");
+        changeScreenAdmin();
 }
 
 
