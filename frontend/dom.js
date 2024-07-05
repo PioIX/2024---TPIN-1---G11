@@ -19,6 +19,22 @@ function changeScreen() {
         titulo.style.display = "none";
     }
 }
+
+function changeScreenAdmin() {
+    const notepad = document.getElementById("notepad");
+    const login = document.getElementById("login");
+    const loginAdmin = document.getElementById("loginAdmin");
+    if(notepad.style.display !== "none") {
+        notepad.style.display = "none";
+        login.style.display = "";
+        loginAdmin.style.display = "";
+    }
+    else {
+        notepad.style.display = "";
+        login.style.display = "none";
+        loginAdmin.style.display = "none";
+    }
+}
 function getPreguntaContent() {
     return document.getElementById("content").value;
 }
