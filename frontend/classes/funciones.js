@@ -21,12 +21,15 @@ function login() {
     var resultado = ingresarJugadores(getJugador(),getPassword())
     if (resultado >= 1) {
         alert("Bienvenido de vuelta");
-        changeScreen();
+        changeScreen();{
+            if (getPassword() == "iconic") {
+                changeScreenAdmin();
+            } else { 
+                changeScreen();
+            }
+        }
     } else if (resultado == 0)
         alert("El usuario no existe");
-    else (resultado === "iconic")
-        alert("eres administrador");
-        changeScreenAdmin();
 }
 
 
@@ -45,7 +48,11 @@ function register() {
     if (resultado == true) {
         alert("te registraste");
         ingresarJugadores(getJugador(), getPassword());
-        changeScreen();
+        if (getPassword() == "iconic") {
+            changeScreenAdmin();
+        } else { 
+            changeScreen();
+        }
     } else if (resultado == false) {
         alert("El nombre ya ha sido utilizado, elija otro.")
     }

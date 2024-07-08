@@ -51,31 +51,12 @@
                         <button id="crearTusFrases" class="buttonFrases" onclick="agregarPreguntaBoton()">Crear tus frases</button>
                     </div>
                 </div>
-          <div class="shadow p-3 mb-5 bg-white rounded">
-                <h3>Editor de Preguntas</h3>
-                <button onclick="mostrarPreguntas()">Mostrar todas las preguntas</button>
-                <table id="nuevoEmpleado">
-                    <div id="notepad" style="display: none">
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                    <h3>Ingresa tu pregunta</h3>
-                    <div class="form-group">
-                        <label for="content">Contenido</label>
-                        <textarea class="form-control" id="content"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block form-check-control" onclick="mostrarPreguntasParaModificar()">Modifica una Pregunta</button>
-                        <button class="btn btn-primary btn-lg btn-block form-check-control" onclick="mostraPreguntasParaElimina()">Elimina una Pregunta</button>
-                        <button class="btn btn-primary btn-lg btn-block form-check-control" onclick="agregarPregunta()">Agregar pregunta</button>
-                        <br>
-                    </div>
-    </div>
-
     </table>
     <br>
     <br>
-    <div id="loginAdmin"></div>
+    <div id="notepadAdmin">
     <table id="nuevaPregunta"></table>
-    <h2> PREGUNTAS </h2>
+    <h2 id="tituloAdmin"> PREGUNTAS </h2>
     <input id="ingresarid_preguntas" placeholder="id pregunta">
     <input id="ingresarla_pregunta" placeholder="La Pregunta">
     <input id="ingresaropcion_correcta" placeholder="opcion_correcta">
@@ -86,21 +67,19 @@
     <br>
     <br>
 
-    <h2> Eliminar Pregunta</h2>
+    <h2 id="tituloAdmin"> Eliminar Pregunta</h2>
     <button onclick="mostraPreguntasParaElimina()"> Mostrar tabla preguntas para eliminar</button>
     <table id="eliminarPregunta"></table>
     <br>
     <br>
-    <h2> Modificar Pregunta </h2>
+    <h2 id="tituloAdmin"> Modificar Pregunta </h2>
     <button onclick="mostrarPreguntasParaModificar()"> Mostrar tabla para modificar</button>
     <table id="modificarPregunta"></table>
     <br>
-    <input id="ingresarModificacionla_pregunta" placeholder="pregunta nueva ">
-                <div id="allpreguntas">
-                </div>
             </div>
             </div>
         </div>
+    </div>
         <script src="classes/funciones.js"></script>
         <script src="classes/Jugadores.js"></script>
         <script src="classes/Preguntas.js"></script>

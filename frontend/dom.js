@@ -27,20 +27,24 @@ document.body.style.backgroundColor = nextColor
 }
 
 function changeScreenAdmin() {
-    const notepad = document.getElementById("notepad");
-    const login = document.getElementById("login");
-    const loginAdmin = document.getElementById("loginAdmin");
-    if(notepad.style.display !== "none") {
-        notepad.style.display = "none";
-        login.style.display = "";
-        loginAdmin.style.display = "";
+    const notepadAdmin = document.getElementById("notepadAdmin");
+    const tituloAdmin = document.getElementById("tituloAdmin");
+    if(notepadAdmin.style.display !== "none") {
+        notepadAdmin.style.display = "none";
+        tituloAdmin.style.display = "";
     }
     else {
-        notepad.style.display = "";
-        login.style.display = "none";
-        loginAdmin.style.display = "none";
+        notepadAdmin.style.display = "";
+        tituloAdmin.style.display = "none";
+        
     }
+const colors = ["orange"]; // Colores de fondo alternativos
+const currentColor = document.body.style.backgroundColor;
+const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
+
+document.body.style.backgroundColor = nextColor
 }
+
 function getPreguntaContent() {
     return document.getElementById("content").value;
 }
