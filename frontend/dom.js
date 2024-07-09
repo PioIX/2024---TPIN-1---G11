@@ -26,6 +26,28 @@ const nextColor = colors.find(color => color !== currentColor) || colors[0]; // 
 document.body.style.backgroundColor = nextColor
 }
 
+function changeScreenComoJugar() {
+    const notepadComoJugar = document.getElementById("notepadComoJugar");
+    const login = document.getElementById("login");
+    const titulo = document.getElementById("titulo");
+    if(notepad.style.display !== "noneee") {
+        notepad.style.display = "none";
+        login.style.display = "";
+        titulo.style.display = "";
+    }
+    else {
+        notepad.style.display = "";
+        login.style.display = "none";
+        titulo.style.display = "none";
+        
+    }
+const colors = ["green"]; // Colores de fondo alternativos
+const currentColor = document.body.style.backgroundColor;
+const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
+
+document.body.style.backgroundColor = nextColor
+}
+
 function changeScreenAdmin() {
     const notepadAdmin = document.getElementById("notepadAdmin");
     const tituloAdmin = document.getElementById("tituloAdmin");

@@ -74,3 +74,7 @@ function respuestaCorrecta(preguntasId, respuestasId) {
         }
 }
 }
+
+function comoJugar (){
+    changeScreenComoJugar();
+}
