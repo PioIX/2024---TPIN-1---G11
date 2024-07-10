@@ -1,0 +1,6 @@
+body {
+    background-image: url("imagenes/Como\ jugar.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    display:flex;
+}

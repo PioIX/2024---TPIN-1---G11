@@ -156,11 +156,20 @@ h2 {
     margin-top: 10px;
     text-align: center;
     align-items: center;
+    padding: 10px 20px;
+    border-radius: 2px 2px 20px 2px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    margin: 0 auto;
+    display:block;
 }
 
 .buttonJugar {
     background-color: #91e6e9;
     border-color: #91e6e9;
+    text-align: center;
 }
 .buttonRegistrar {
     background-color: #cf5f43;
@@ -173,4 +182,18 @@ h2 {
 .buttonFrases {
     background-color: #91e6e9;
     border-color: #91e6e9;
+}
+
+#notepad{
+    background-image: url("imagenes/Bienvenidos.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    display: flexbox;
+}
+
+#login {
+    background-image: url("imagenes/Registro.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    display:flex;
 }
