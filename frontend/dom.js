@@ -8,12 +8,15 @@ function changeScreen() {
     const notepad = document.getElementById("notepad");
     const login = document.getElementById("login");
     const titulo = document.getElementById("titulo");
+    const body = document.getElementById("body");
+
     if(notepad.style.display !== "none") {
         notepad.style.display = "none";
         login.style.display = "";
         titulo.style.display = "";
     }
     else {
+        body.style.backgroundImage = 'url("styles/imagenes/Bienvenidos.jpg")';
         notepad.style.display = "";
         login.style.display = "none";
         titulo.style.display = "none";
@@ -49,15 +52,23 @@ document.body.style.backgroundColor = nextColor
 }
 
 function changeScreenAdmin() {
+    console.log("Me llame")
     const notepadAdmin = document.getElementById("notepadAdmin");
     const tituloAdmin = document.getElementById("tituloAdmin");
+    const login = document.getElementById("login");
+    const titulo = document.getElementById("titulo");
+
     if(notepadAdmin.style.display !== "none") {
         notepadAdmin.style.display = "none";
-        tituloAdmin.style.display = "";
+        tituloAdmin.style.display = "none";
+        login.style.display = "";
+        titulo.style.display = "";
     }
     else {
         notepadAdmin.style.display = "";
-        tituloAdmin.style.display = "none";
+        tituloAdmin.style.display = "";
+        login.style.display = "none";
+        titulo.style.display = "none";
         
     }
 const colors = ["orange"]; // Colores de fondo alternativos

@@ -14,7 +14,8 @@
         <title>Presupuesto1erProyecto</title>
         <link href="styles/style.css" rel="stylesheet" type="text/css" />
     </head>
-    <body class="container">
+    <body class="container" id="body">
+        <button class="form-check-control btn btn-danger" onclick="logout()">logout</button>
         <h1 id="titulo">REGISTRO</h1>
         <div id="login">
             <div class="shadow p-3 mb-5 bg-white rounded">
@@ -37,8 +38,6 @@
         
         <div id="notepad" style="display: none">
             <div>
-                
-                <h1>BIENVENIDOS</h1>
                 <div class="form-group">
                         <button id="comoJugar" class="buttonComoJugar" onclick> <a href="comoJugar.html">Cómo jugar?</a></button>
                 </div>
@@ -53,14 +52,11 @@
                     </div>
         
                 
-            </div>
-            <div>
-                <h1 id="pregunta"></h1>
-            </div>
-    </table>
+
     <br>
     <br>
-    <div id="notepadAdmin">
+  <h1 id="pregunta"></h1>
+    <div id="notepadAdmin" style="display: none">
     <table id="nuevaPregunta"></table>
     <h2 id="tituloAdmin"> PREGUNTAS </h2>
     <input id="ingresarid_preguntas" placeholder="id pregunta">
