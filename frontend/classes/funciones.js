@@ -74,13 +74,28 @@ function respuestaCorrecta(preguntasId, respuestasId) {
         }
 }
 }
+let vectorPreguntas = []
+let preguntaActual = 0
 
-function comoJugar (){
-    changeScreenComoJugar();
+async function jugar(){
+    //changeScreenJugar()
+    vectorPreguntas = await traerLasPreguntas() //Hacer un fetch al pedido obtenerPreguntas
+    mostrarPreguntas(preguntaActual)
+    preguntaActual++;
 }
 
-function logout(){
-    clientId = -1
-    posCliente= -1
-    changeScreen()
+async function traerLasPreguntas() {
+    const response = await fetch('http://localhost:3000/obtenerPreguntas',{
+        method:"GET",
+        headers: {
+            "Content-Type": "application/json",
+          },
+    })
+
+    console.log(response)
+    //Tengo que usar el await porque la respuesta del servidor es lenta
+    const result = await response.json()
+    console.log(result)
+    return result
 }
+

@@ -271,3 +271,8 @@ const response= await fetch('http://localhost:3000/modificarEmpleados',{
     })
     mostrarEmpleadosParaModificar()
 }
+
+
+function mostrarPreguntas(preguntaActual) {
+    document.getElementById("pregunta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`
+}
