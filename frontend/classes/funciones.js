@@ -24,13 +24,11 @@ function login() {
         changeScreen();{
             if (getPassword() == "iconic") {
                 changeScreenAdmin();
-            } else { 
-                changeScreen();
-            }
-        }
-    } else if (resultado == 0)
+        
+    } else  (resultado == 0)
         alert("El usuario no existe");
 }
+    }}
 
 
 function registroJugador(nombre, contraseña) {
