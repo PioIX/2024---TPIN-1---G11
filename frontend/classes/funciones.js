@@ -78,3 +78,9 @@ function respuestaCorrecta(preguntasId, respuestasId) {
 function comoJugar (){
     changeScreenComoJugar();
 }
+
+function logout(){
+    clientId = -1
+    posCliente= -1
+    changeScreen()
+}
