@@ -17,7 +17,10 @@ app.get('/', function(req, res){
 
 app.get('/obtenerPreguntas', async function(req,res){
     console.log(req.query) 
-    const result = await realizarQuery ("SELECT * FROM Preguntas")
+    const result = await realizarQuery (`select * from Respuestas 
+    inner join Preguntas
+    ON Preguntas.id_preguntas = Respuestas.id_preguntas;`)
+
     res.send(result)
 })
 
@@ -32,7 +35,7 @@ app.post('/insertarPreguntas', async function(req,res) {
         await realizarQuery(`INSERT INTO Preguntas (la_pregunta) 
     VALUES ('${req.body.la_pregunta}')`);
     let pregunta = await realizarQuery(`select id_preguntas from Preguntas WHERE la_pregunta = '${req.body.la_pregunta}'`) //Obrtengo id
-    await realizarQuery(`INSERT INTO Respuestas (id_preguntas; opcion_correcta, opcio1, opcion2, opcion3) 
+    await realizarQuery(`INSERT INTO Respuestas (id_preguntas; opcion_correcta, opcion1, opcion2, opcion3) 
         VALUES ('${req.body.la_pregunta}')`);  
 
     res.send({res: "ok"})

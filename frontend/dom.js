@@ -83,7 +83,7 @@ function getPreguntaContent() {
 }
 
 
-async function mostrarPreguntas() {
+async function mostrarPreguntasBack() {
     const response = await fetch('http://localhost:3000/obtenerPreguntas',{
         method:"GET",
         headers: {
@@ -133,18 +133,6 @@ async function agregarPregunta() {
     })
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
 
     console.log(response)
     const result = await response.json()
@@ -275,4 +263,7 @@ const response= await fetch('http://localhost:3000/modificarEmpleados',{
 
 function mostrarPreguntas(preguntaActual) {
     document.getElementById("pregunta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`
+    console.log(vectorPreguntas[preguntaActual])
+    document.getElementById("respuesta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`
+    console.log(vectorPreguntas[preguntaActual])
 }
