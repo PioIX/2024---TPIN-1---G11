@@ -1,9 +1,10 @@
 var respuestasId = 1
 class Respuesta {
-    constructor(contenido, jugadorId) {
+    constructor(contenido, idPregunta) {
         this.contenido = contenido,
-        this.jugadores = [jugadorId],
+        //this.jugadores = [jugadorId],
         this.id = respuestasId,
+        this.idPregunta = idPregunta,
         preguntasId++;
     }
 }

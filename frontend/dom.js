@@ -1,3 +1,7 @@
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}  
+
 function getJugador() {
     return document.getElementById("jugador").value;
 }
@@ -10,7 +14,7 @@ function changeScreen() {
     const titulo = document.getElementById("titulo");
     const body = document.getElementById("body");
 
-    if(notepad.style.display !== "none") {
+    if (notepad.style.display !== "none") {
         notepad.style.display = "none";
         login.style.display = "";
         titulo.style.display = "";
@@ -20,20 +24,20 @@ function changeScreen() {
         notepad.style.display = "";
         login.style.display = "none";
         titulo.style.display = "none";
-        
-    }
-const colors = ["white"]; // Colores de fondo alternativos
-const currentColor = document.body.style.backgroundColor;
-const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
 
-document.body.style.backgroundColor = nextColor
+    }
+    const colors = ["white"]; // Colores de fondo alternativos
+    const currentColor = document.body.style.backgroundColor;
+    const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
+
+    document.body.style.backgroundColor = nextColor
 }
 
 function changeScreenComoJugar() {
     const notepadComoJugar = document.getElementById("notepadComoJugar");
     const login = document.getElementById("login");
     const titulo = document.getElementById("titulo");
-    if(notepad.style.display !== "noneee") {
+    if (notepad.style.display !== "noneee") {
         notepad.style.display = "none";
         login.style.display = "";
         titulo.style.display = "";
@@ -42,13 +46,13 @@ function changeScreenComoJugar() {
         notepad.style.display = "";
         login.style.display = "none";
         titulo.style.display = "none";
-        
-    }
-const colors = ["green"]; // Colores de fondo alternativos
-const currentColor = document.body.style.backgroundColor;
-const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
 
-document.body.style.backgroundColor = nextColor
+    }
+    const colors = ["green"]; // Colores de fondo alternativos
+    const currentColor = document.body.style.backgroundColor;
+    const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
+
+    document.body.style.backgroundColor = nextColor
 }
 
 function changeScreenAdmin() {
@@ -58,7 +62,7 @@ function changeScreenAdmin() {
     const login = document.getElementById("login");
     const titulo = document.getElementById("titulo");
 
-    if(notepadAdmin.style.display !== "none") {
+    if (notepadAdmin.style.display !== "none") {
         notepadAdmin.style.display = "none";
         tituloAdmin.style.display = "none";
         login.style.display = "";
@@ -69,13 +73,13 @@ function changeScreenAdmin() {
         tituloAdmin.style.display = "";
         login.style.display = "none";
         titulo.style.display = "none";
-        
-    }
-const colors = ["orange"]; // Colores de fondo alternativos
-const currentColor = document.body.style.backgroundColor;
-const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
 
-document.body.style.backgroundColor = nextColor
+    }
+    const colors = ["orange"]; // Colores de fondo alternativos
+    const currentColor = document.body.style.backgroundColor;
+    const nextColor = colors.find(color => color !== currentColor) || colors[0]; // Alternar entre los colores
+
+    document.body.style.backgroundColor = nextColor
 }
 
 function getPreguntaContent() {
@@ -84,17 +88,21 @@ function getPreguntaContent() {
 
 
 async function mostrarPreguntasBack() {
-    const response = await fetch('http://localhost:3000/obtenerPreguntas',{
-        method:"GET",
+    const response = await fetch('http://localhost:3000/obtenerPreguntas', {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
-          },
+        },
     })
-
-
-    console.log(response)
     const result = await response.json()
     console.log(result)
+    
+    for(let i=0; i<result.length; i++) {
+        var pregunta = result[i];
+        preguntas.push(new Pregunta(pregunta.id_preguntas, pregunta.la_pregunta))
+    }
+
+    console.log(preguntas);
     let tabla = `
     <tr>
          <th> id_preguntas </th>
@@ -114,22 +122,22 @@ async function mostrarPreguntasBack() {
 }
 async function agregarPregunta() {
     const data = {
-        id_preguntas : document.getElementById("ingresarid_preguntas").value,
-        la_pregunta : document.getElementById("ingresarla_pregunta").value,
+        id_preguntas: document.getElementById("ingresarid_preguntas").value,
+        la_pregunta: document.getElementById("ingresarla_pregunta").value,
         opcion_correcta: document.getElementById("ingresaropcion_correcta").value,
-        opcion1 : document.getElementById("ingresaropcion1").value,
-        opcion2 : document.getElementById("ingresaropcion2").value,
-        opcion3 : document.getElementById("ingresaropcion3").value,
-        
+        opcion1: document.getElementById("ingresaropcion1").value,
+        opcion2: document.getElementById("ingresaropcion2").value,
+        opcion3: document.getElementById("ingresaropcion3").value,
+
     }
 
 
-    const response = await fetch('http://localhost:3000/insertarPreguntas',{
-        method:"POST",
+    const response = await fetch('http://localhost:3000/insertarPreguntas', {
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
-          },
-        body:JSON.stringify(data),
+        },
+        body: JSON.stringify(data),
     })
 
 
@@ -162,32 +170,32 @@ async function agregarPregunta() {
 
 async function eliminarEmpleado(id) {
     const data = {
-        id : id
+        id: id
     }
 
-    const response = await fetch('http://localhost:3000/eliminarEmpleados',{
-        method:"DELETE",
+    const response = await fetch('http://localhost:3000/eliminarEmpleados', {
+        method: "DELETE",
         headers: {
             "Content-Type": "application/json",
-          },
-        body:JSON.stringify(data),
+        },
+        body: JSON.stringify(data),
     })
 }
 
 
-async function mostraEmpleadoParaElimina(){
-    const response = await fetch ('http://localhost:3000/eliminarEmpleados',{
+async function mostraEmpleadoParaElimina() {
+    const response = await fetch('http://localhost:3000/eliminarEmpleados', {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
         },
     })
- 
-console.log(response)
-const result = await response.json()
-console.log(result)
 
-let tabla_eliminar = `
+    console.log(response)
+    const result = await response.json()
+    console.log(result)
+
+    let tabla_eliminar = `
 <tr> 
          <th>Nombre</th>
          <th>Apellido</th>
@@ -210,19 +218,19 @@ let tabla_eliminar = `
 
 
 
-async function mostrarEmpleadosParaModificar (){
-    const response = await fetch ('http://localhost:3000/obtenerEmpleados',{
+async function mostrarEmpleadosParaModificar() {
+    const response = await fetch('http://localhost:3000/obtenerEmpleados', {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
     })
- 
-console.log(response)
-const result = await response.json()
-console.log(result)
 
-let tabla_modificar = `
+    console.log(response)
+    const result = await response.json()
+    console.log(result)
+
+    let tabla_modificar = `
 <tr> 
          <th>Nombre</th>
          <th>Apellido</th>
@@ -245,25 +253,49 @@ let tabla_modificar = `
 
 async function modificarEmpleadosrsç(id) {
     const data = {
-        nombre : document.getElementById("ingresarModificacionNombre").value,
+        nombre: document.getElementById("ingresarModificacionNombre").value,
         id: id
     }
 
-const response= await fetch('http://localhost:3000/modificarEmpleados',{
-    method:"PUT",
-    headers: {
-        "Content-Type": "application/json",
+    const response = await fetch('http://localhost:3000/modificarEmpleados', {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
         },
-        body:JSON.stringify(data),
+        body: JSON.stringify(data),
 
     })
     mostrarEmpleadosParaModificar()
 }
 
+function mezclarRespuestas(preguntaActual) {
+    var respuestas = [];
+    var posAleatoria;
+    for(let i=0; i<3; i++) {
+        if(i==0)
+            respuestas.push(preguntaActual.opcionCorrecta)
+        else if (i == 1)
+            respuestas.push(preguntaActual.opcion1)
+        else if (i == 2)
+            respuestas.push(preguntaActual.opcion2)
+        else
+            respuestas.push(preguntaActual.opcion3)
+    }
+    console.log("Las respuestas son: ", respuestas);
+}
 
 function mostrarPreguntas(preguntaActual) {
     document.getElementById("pregunta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`
     console.log(vectorPreguntas[preguntaActual])
-    document.getElementById("respuesta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`
+    document.getElementById("respuestas").innerHTML = ""
+    var respuestas = document.getElementById("respuestas").innerHTML 
+    mezclarRespuestas(preguntaActual);
+    /*
+    for (let i = 0; i < 3; i++) {
+        respuestas += `
+            <button>${vectorPreguntas[preguntaActual]}</button>
+        `
+    }
     console.log(vectorPreguntas[preguntaActual])
+    */
 }
