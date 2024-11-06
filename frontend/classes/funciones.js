@@ -20,13 +20,12 @@ function ingresarJugadores(nombre, contraseña) {
 function login() {
     var resultado = ingresarJugadores(getJugador(),getPassword())
     if (resultado >= 1) {
-        alert("Bienvenido de vuelta");
+        alert("Bienvenido de vuelta!");
         changeScreen();{
             if (getPassword() == "iconic") {
                 changeScreenAdmin();
         
-    } else  (resultado == 0)
-        alert("El usuario no existe");
+    }
 }
     }}
 

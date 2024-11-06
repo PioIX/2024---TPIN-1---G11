@@ -271,9 +271,9 @@ async function modificarEmpleadosrsç(id) {
 function mezclarRespuestas(preguntaActual) {
     var respuestas = [];
     var posAleatoria;
-    for(let i=0; i<3; i++) {
+    for(let i=0; i<=3; i++) {
         if(i==0)
-            respuestas.push(preguntaActual.opcionCorrecta)
+            respuestas.push(preguntaActual.opcion_correcta)
         else if (i == 1)
             respuestas.push(preguntaActual.opcion1)
         else if (i == 2)
@@ -282,20 +282,23 @@ function mezclarRespuestas(preguntaActual) {
             respuestas.push(preguntaActual.opcion3)
     }
     console.log("Las respuestas son: ", respuestas);
+    return respuestas
 }
 
 function mostrarPreguntas(preguntaActual) {
     document.getElementById("pregunta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`
     console.log(vectorPreguntas[preguntaActual])
     document.getElementById("respuestas").innerHTML = ""
-    var respuestas = document.getElementById("respuestas").innerHTML 
-    mezclarRespuestas(preguntaActual);
-    /*
-    for (let i = 0; i < 3; i++) {
+    var respuestas = ""
+    var respuestasMezcladas = mezclarRespuestas(vectorPreguntas[preguntaActual])
+    //document.getElementById("pregunta").innerHTML = `${vectorPreguntas[preguntaActual].la_pregunta}`;
+
+    console.log({respuestasMezcladas})
+    for (let i = 0; i <= 3; i++) {
         respuestas += `
-            <button>${vectorPreguntas[preguntaActual]}</button>
+            <button class="buttonJugar" value="${respuestasMezcladas[i]}" onclick="">${respuestasMezcladas[i]}</button>
         `
     }
     console.log(vectorPreguntas[preguntaActual])
-    */
+    document.getElementById("respuestas").innerHTML = respuestas
 }

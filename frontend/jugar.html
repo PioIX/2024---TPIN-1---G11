@@ -21,43 +21,12 @@
     <div>
         <button onclick="mostrarPreguntasBack()">Obtener respuestas</button>
         <h1 id="pregunta"></h1>
-        <div class="respuestas">
+        <div id="respuestas" class="respuestas">
             <button id="1" class="buttonJugar" onclick="jugar()"></button>
             <button id="2" class="buttonJugar" onclick="jugar()"></button>
             <button id="3" class="buttonJugar" onclick="jugar()"></button>
             <button id="4" class="buttonJugar" onclick="jugar()"></button>
         </div>
-        <script>
-            // Función para obtener las respuestas desde el backend
-            async function obtenerRespuestas() {
-                try {
-                    const res = await fetch('http://localhost:3000/obtenerRespuestas');
-                    const respuestas = await res.json();  // Asumimos que el backend devuelve un array de respuestas
-                    console.log(respuestas);  // Revisa la estructura del array de respuestas
-    
-                    // Llamamos a la función para asignar las respuestas a los botones
-                    asignarRespuestasABotones(respuestas);
-                } catch (error) {
-                    console.error('Error al obtener las respuestas:', error);
-                }
-            }
-               // Función para asignar las respuestas a los botones
-        function asignarRespuestasABotones(respuestas) {
-            // Asignamos las respuestas a los botones
-            const botones = document.querySelectorAll('.buttonJugar');  // Seleccionamos los botones
-            for (let i = 0; i < botones.length; i++) {
-                if (respuestas[i]) {  // Aseguramos que haya una respuesta para cada botón
-                    botones[i].textContent = respuestas[i].contenido;  // Asignamos el contenido al botón
-                }
-            }
-        }
-
-        // Llamamos a obtenerRespuestas al cargar la página
-        window.onload = function() {
-            obtenerRespuestas();
-        };
-    </script>
-    
         <section>
             <a href="index.html"></a>
         </section>
